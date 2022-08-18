@@ -1,0 +1,6 @@
+- the best practice is to use the script at the end of the body of your page to
+- to display the output in the screen we have three ways:
+    window.alert();
+    document.write('');
+    console.log('');
+-every variable has been declared using var keyword, it will be added to the window object, hence you can access it using window.variableName() and window
