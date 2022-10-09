@@ -228,18 +228,33 @@ let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
 
 let solution = myString
   .split(",")
-  .filter(function (ele) {return isNaN(parseInt(ele));})
-  .map(function (ele) {return ele.length>1?ele.split("")[0]:ele;})
-  .map(function (ele) {return ele != "_" ? ele : " ";})
-  .map(function (ele) {return ele != "Z"?ele:""}).join("");
+  .filter(function (ele) {
+    return isNaN(parseInt(ele));
+  })
+  .map(function (ele) {
+    return ele.length > 1 ? ele.split("")[0] : ele;
+  })
+  .map(function (ele) {
+    return ele != "_" ? ele : " ";
+  })
+  .map(function (ele) {
+    return ele != "Z" ? ele : "";
+  })
+  .join("");
 console.log(solution);
 
 let solution1 = myString
   .split("")
-  .filter((char) => { return isNaN(char) && !char.includes(",") })
+  .filter((char) => {
+    return isNaN(char) && !char.includes(",");
+  })
   .slice(1, 18)
-  .map((char) => { return char === "_" ? " " : char })
-  .reduce((acc, cur) => { return `${acc}${cur}` });
+  .map((char) => {
+    return char === "_" ? " " : char;
+  })
+  .reduce((acc, cur) => {
+    return `${acc}${cur}`;
+  });
 
 console.log(solution1);
 
